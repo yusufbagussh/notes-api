@@ -1,32 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
   </head>
   <body>
-    <header>
-      <h1>Notes App</h1>
-      <nav>
-        <a href="#" id="active-notes-link">Active Notes</a> |
-        <a href="#" id="archived-notes-link">Archived Notes</a>
-      </nav>
-    </header>
-    <div class="container">
-      <form id="create-note-form" style="display: none">
-        <input type="text" name="title" placeholder="Note title" required />
-        <textarea name="body" placeholder="Note body" required></textarea>
-        <button type="submit">Create Note</button>
-      </form>
-      <div id="active-notes-container" style="display: none">
-        <h2>Active Notes</h2>
-        <div id="notes-container"></div>
+    <div id="app">
+      <header>
+        <h1>Notes App</h1>
+      </header>
+      <div class="container">
+        <note-form></note-form>
+        <note-list></note-list>
       </div>
-      <div id="archived-notes-container" style="display: none">
-        <h2>Archived Notes</h2>
-        <div id="archived-notes-list"></div>
-      </div>
+      <footer>
+        <p>&copy; 2024 NotesApp</p>
+      </footer>
+      <loading-indicator></loading-indicator>
     </div>
   </body>
 </html>

@@ -1,18 +1,18 @@
-class LoadingIndicator {
-    constructor() {
-      this.element = document.createElement('div');
-      this.element.className = 'loading-indicator';
-      this.element.innerHTML = '<p>Loading...</p>';
+if (!customElements.get('loading-indicator')) {
+  class LoadingIndicator extends HTMLElement {
+    connectedCallback() {
+      this.render();
     }
-  
-    show() {
-      document.body.appendChild(this.element);
-    }
-  
-    hide() {
-      document.body.removeChild(this.element);
+
+    render() {
+      this.innerHTML = `
+        <div class="loading-indicator">
+          <p>Loading...</p>
+        </div>
+      `;
+      this.style.display = 'none'; // Hide by default
     }
   }
-  
-  export default LoadingIndicator;
-  
+
+  customElements.define('loading-indicator', LoadingIndicator);
+}
